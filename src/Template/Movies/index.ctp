@@ -7,19 +7,20 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Movie'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouveau Film'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Showtimes'), ['controller' => 'Showtimes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Showtime'), ['controller' => 'Showtimes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nouvelle séance'), ['controller' => 'Showtimes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="movies index large-9 medium-8 columns content">
-    <h3><?= __('Movies') ?></h3>
+    <h3><?= __('Films') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('duration') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('durée') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('year') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -31,12 +32,13 @@
                 <td><?= $this->Number->format($movie->id) ?></td>
                 <td><?= h($movie->name) ?></td>
                 <td><?= $this->Number->format($movie->duration) ?></td>
+                <td><?= ($movie->year) ?></td>
                 <td><?= h($movie->created) ?></td>
                 <td><?= h($movie->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $movie->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $movie->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $movie->id], ['confirm' => __('Are you sure you want to delete # {0}?', $movie->id)]) ?>
+                    <?= $this->Html->link(__('Voir'), ['action' => 'view', $movie->id]) ?>
+                    <?= $this->Html->link(__('Editer'), ['action' => 'edit', $movie->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $movie->id], ['confirm' => __('Tu déconnes tu veux pas le supprimer !? C\'est un super film !  # {0}?', $movie->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -45,7 +47,7 @@
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('précédent')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('next') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
