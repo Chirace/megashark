@@ -40,6 +40,21 @@ class RoomsController extends AppController
 
         $this->set('room', $room);
         $this->set('_serialize', ['room']);
+        
+        $showtimes = $this->Rooms->Showtimes->find()
+        ->select(['showtimes'])
+        //->where($showtime->id = )
+        ;
+        $this->set('showtimes', $showtimes);
+        
+        //foreach($showtimes as $showtime){}
+        
+        
+        /*$showtimesthisweek= $showtimes->find(){
+        
+        
+        }*/
+        
     }
 
     /**

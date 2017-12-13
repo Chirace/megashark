@@ -40,24 +40,31 @@
     <table class="horizontal-table">
         <td>
             <th scope="row"><?= __('Monday') ?></th>
+            
         </td>
         <td>
             <th scope="row"><?= __('Tuesday') ?></th>
+            
         </td>
         <td>
             <th scope="row"><?= __('Wednesday') ?></th>
+            
         </td>
         <td>
             <th scope="row"><?= __('Thursday') ?></th>
+
         </td>
         <td>
             <th scope="row"><?= __('Friday') ?></th>
+           
         </td>
         <td>
             <th scope="row"><?= __('Saturday') ?></th>
+            
         </td>
         <td>
             <th scope="row"><?= __('Sunday') ?></th>
+            
         </td>
     </table>
 </div>
