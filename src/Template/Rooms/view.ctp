@@ -40,7 +40,13 @@
     <table class="horizontal-table">
         <td>
             <th scope="row"><?= __('Monday') ?></th>
-            
+            <?php foreach($showtimes as $showtime){
+                    /*
+                    print_r(query("$showtimes");
+                    echo query("$showtimes");
+                    */
+                }
+            ?>
         </td>
         <td>
             <th scope="row"><?= __('Tuesday') ?></th>
